@@ -8,12 +8,16 @@ h1 {
 
 .frame {
   display: flex;
+  flex-direction: column;
   margin: auto;
-  border: 3px solid grey;
-  border-radius: 5px;
-  height: 500px;
+  border: 6px solid grey;
+  background: rgb(194, 194, 194);
+  border-radius: 10px;
+  height: 550px;
   width: 400px;
 }
+
+/*top part*/
 
 .top {
   display: flex;
@@ -24,6 +28,9 @@ h1 {
 
 .display {
   border: 1px solid rgb(190, 87, 87);
+  border-radius: 10px;
+  background-color: lightgrey;
+
   height: 100px;
   width: 350px;
 
@@ -37,21 +44,48 @@ h1 {
   display: flex;
 }
 
-.clear {
+.btn-clear,
+.btn-delete {
   height: 50px;
   width: 150px;
   margin-inline: auto;
   margin-top: 20px;
-}
-
-.cear,
-.delete {
-  height: 50px;
-  width: 150px;
-  margin-inline: auto;
-  margin-top: 20px;
+  border-radius: 10px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/*bottom part*/
+
+.bottom {
+  border: 1px solid rgb(0, 255, 26);
+  height: 100%;
+
+  display: flex;
+  margin-inline: auto;
+  margin-top: 10px;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  margin-inline: auto;
+
+  column-gap: 32px;
+  row-gap: 0px;
+}
+
+.key {
+  border: 2px solid grey;
+  background-color: lightgrey;
+
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
 }
