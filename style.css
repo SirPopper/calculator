@@ -1,0 +1,57 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  /*border: 1px solid red;*/
+}
+
+.frame {
+  display: flex;
+  margin: auto;
+  border: 3px solid grey;
+  border-radius: 5px;
+  height: 500px;
+  width: 400px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid blue;
+}
+
+.display {
+  border: 1px solid rgb(190, 87, 87);
+  height: 100px;
+  width: 350px;
+
+  display: flex;
+  margin-inline: auto;
+
+  margin-top: 20px;
+}
+
+.buttons-top {
+  display: flex;
+}
+
+.clear {
+  height: 50px;
+  width: 150px;
+  margin-inline: auto;
+  margin-top: 20px;
+}
+
+.cear,
+.delete {
+  height: 50px;
+  width: 150px;
+  margin-inline: auto;
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
