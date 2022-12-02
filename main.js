@@ -10,6 +10,11 @@ key.forEach((key) => {
   });
 });
 
+//function to get number before operator
+function numBeforeOperator(string) {
+  return string.split(" ")[0];
+}
+
 //math functions
 function add(a, b) {
   return a + b;
@@ -27,7 +32,8 @@ function divide(a, b) {
   return a / b;
 }
 
-//making the functions work
+//ops Buttons
+let inputArray = [];
 let opsArray = [];
 const displayUpper = document.querySelector(".display-upper");
 
@@ -36,7 +42,15 @@ keyOps.forEach((key) => {
   key.addEventListener("click", () => {
     displayUpper.textContent = displayLower.textContent;
     displayLower.textContent = "";
+
+    //push array with number before operator in upper display
+    inputArray.push(numBeforeOperator(displayUpper.textContent));
     opsArray.push(key.textContent);
+
+    displayUpper.textContent =
+      inputArray[inputArray.length - 1] + ` ${key.textContent}`;
+
+    console.log(inputArray);
     console.log(opsArray);
   });
 });
@@ -45,28 +59,38 @@ keyOps.forEach((key) => {
 const keyEqual = document.querySelector(".key.equal");
 
 keyEqual.addEventListener("click", () => {
-  console.log(opsArray.length);
+  //push array with number before operator in upper display
+  inputArray.push(numBeforeOperator(displayLower.textContent));
+  console.log(inputArray);
   if (opsArray[opsArray.length - 1] == "%") {
     displayLower.textContent = divide(
-      Number(displayUpper.textContent),
-      Number(displayLower.textContent)
+      Number(inputArray[inputArray.length - 2]),
+      Number(inputArray[inputArray.length - 1])
     );
   } else if (opsArray[opsArray.length - 1] == "x") {
     displayLower.textContent = multiply(
-      Number(displayUpper.textContent),
-      Number(displayLower.textContent)
+      Number(inputArray[inputArray.length - 2]),
+      Number(inputArray[inputArray.length - 1])
     );
   } else if (opsArray[opsArray.length - 1] == "-") {
     displayLower.textContent = subtract(
-      Number(displayUpper.textContent),
-      Number(displayLower.textContent)
+      Number(inputArray[inputArray.length - 2]),
+      Number(inputArray[inputArray.length - 1])
     );
   } else if (opsArray[opsArray.length - 1] == "+") {
     displayLower.textContent = add(
-      Number(displayUpper.textContent),
-      Number(displayLower.textContent)
+      Number(inputArray[inputArray.length - 2]),
+      Number(inputArray[inputArray.length - 1])
     );
   }
+
+  displayUpper.textContent =
+    inputArray[inputArray.length - 2] +
+    " " +
+    opsArray[opsArray.length - 1] +
+    " " +
+    inputArray[inputArray.length - 1] +
+    " = ";
 });
 
 //clear button logic
