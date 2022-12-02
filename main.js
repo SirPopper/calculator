@@ -29,7 +29,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return a / b;
+  return a % b == 0 ? a / b : (a / b).toFixed(10);
 }
 
 //ops Buttons
@@ -40,6 +40,7 @@ const displayUpper = document.querySelector(".display-upper");
 const keyOps = document.querySelectorAll(".key.ops");
 keyOps.forEach((key) => {
   key.addEventListener("click", () => {
+    //after pressing an operator, put number at upper display and empty lower display
     displayUpper.textContent = displayLower.textContent;
     displayLower.textContent = "";
 
@@ -50,8 +51,8 @@ keyOps.forEach((key) => {
     displayUpper.textContent =
       inputArray[inputArray.length - 1] + ` ${key.textContent}`;
 
-    console.log(inputArray);
-    console.log(opsArray);
+    //console.log(inputArray);
+    //console.log(opsArray);
   });
 });
 
@@ -61,7 +62,9 @@ const keyEqual = document.querySelector(".key.equal");
 keyEqual.addEventListener("click", () => {
   //push array with number before operator in upper display
   inputArray.push(numBeforeOperator(displayLower.textContent));
-  console.log(inputArray);
+  //console.log(inputArray);
+
+  //calculate with proper operator after clicking equal
   if (opsArray[opsArray.length - 1] == "%") {
     displayLower.textContent = divide(
       Number(inputArray[inputArray.length - 2]),
@@ -84,6 +87,7 @@ keyEqual.addEventListener("click", () => {
     );
   }
 
+  //display at upper display the full operation
   displayUpper.textContent =
     inputArray[inputArray.length - 2] +
     " " +

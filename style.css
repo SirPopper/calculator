@@ -1,3 +1,7 @@
+body {
+  font-family: Nanum Gothic;
+}
+
 h1 {
   text-align: center;
 }
@@ -80,10 +84,19 @@ h1 {
   background-color: aquamarine;
 }
 
+.btn-delete:active {
+  box-shadow: 1 1px #666;
+  transform: translateY(3px);
+}
+
 .btn-clear {
   background-color: bisque;
 }
 
+.btn-clear:active {
+  box-shadow: 1 1px #666;
+  transform: translateY(3px);
+}
 /*bottom part*/
 
 .bottom {
@@ -101,7 +114,7 @@ h1 {
   margin-inline: auto;
 
   column-gap: 20px;
-  row-gap: 0px;
+  row-gap: 20px;
 }
 
 .key {
@@ -123,4 +136,24 @@ h1 {
   background-color: rgb(204, 204, 204);
   box-shadow: 1 1px #666;
   transform: translateY(3px);
+}
+
+/* author */
+.author-container {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 30px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  height: 30px;
+  display: flex;
+  margin: auto;
+  margin-inline: 20px;
 }
