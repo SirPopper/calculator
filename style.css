@@ -44,16 +44,12 @@ h1 {
 }
 
 .display-upper {
-  border: 1px solid red;
-
   text-align: right;
   margin: 10px 20px;
   font-size: x-large;
 }
 
 .display-lower {
-  border: 1px solid red;
-
   text-align: right;
   margin: 0px 20px;
   margin-bottom: 10px;
