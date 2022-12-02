@@ -26,8 +26,9 @@ h1 {
   border: 2px solid blue;
 }
 
+/* display */
 .display {
-  border: 1px solid rgb(190, 87, 87);
+  border: 2px solid black;
   border-radius: 10px;
   background-color: lightgrey;
 
@@ -35,11 +36,31 @@ h1 {
   width: 350px;
 
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-inline: auto;
 
   margin-top: 20px;
 }
 
+.display-upper {
+  border: 1px solid red;
+
+  text-align: right;
+  margin: 10px 20px;
+  font-size: x-large;
+}
+
+.display-lower {
+  border: 1px solid red;
+
+  text-align: right;
+  margin: 0px 20px;
+  margin-bottom: 10px;
+  font-size: xx-large;
+}
+
+/* buttons */
 .buttons-top {
   display: flex;
 }
@@ -58,6 +79,14 @@ h1 {
 
   font-size: 15px;
   font-weight: bold;
+}
+
+.btn-delete {
+  background-color: aquamarine;
+}
+
+.btn-clear {
+  background-color: bisque;
 }
 
 /*bottom part*/
@@ -88,4 +117,16 @@ h1 {
   height: 60px;
   width: 60px;
   border-radius: 10px;
+
+  font-size: large;
+}
+
+.key:hover {
+  background-color: rgb(204, 204, 204);
+}
+
+.key:active {
+  background-color: rgb(204, 204, 204);
+  box-shadow: 1 1px #666;
+  transform: translateY(3px);
 }
